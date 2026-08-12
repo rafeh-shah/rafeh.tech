@@ -1,1 +1,1167 @@
+<?php
+/*
+Template Name: Contact Page
+*/
+?>
 
+<?php get_header(); ?>
+
+
+<style>
+
+/* =========================
+   CONTACT PAGE
+========================= */
+
+.contact-page {
+    background: #f8fafc;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.contact-hero {
+    padding: 80px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0f172a,
+            #1e3a8a
+        );
+
+    color: white;
+
+    text-align: center;
+}
+
+
+.contact-hero h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+
+.contact-hero h1 span {
+    color: #38bdf8;
+}
+
+
+.contact-hero p {
+    max-width: 700px;
+    margin: auto;
+
+    color: #dbeafe;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   CONTACT SECTION
+========================= */
+
+.contact-section {
+    padding: 80px 20px;
+}
+
+
+.contact-container {
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+
+.contact-grid {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 35px;
+}
+
+
+/* =========================
+   CONTACT INFO
+========================= */
+
+.contact-info {
+    background: white;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 16px;
+
+    padding: 35px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.05);
+}
+
+
+.contact-info h2 {
+    color: #111827;
+
+    font-size: 30px;
+
+    margin-bottom: 12px;
+}
+
+
+.contact-info > p {
+    color: #64748b;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   CONTACT ITEMS
+========================= */
+
+.contact-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 18px 0;
+
+    border-bottom: 1px solid #e2e8f0;
+}
+
+
+.contact-item:last-child {
+    border-bottom: none;
+}
+
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+
+    flex-shrink: 0;
+
+    background: #eff6ff;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 24px;
+}
+
+
+.contact-item h3 {
+    color: #111827;
+
+    font-size: 16px;
+
+    margin-bottom: 4px;
+}
+
+
+.contact-item a {
+    color: #2563eb;
+
+    font-size: 14px;
+
+    word-break: break-word;
+}
+
+
+.contact-item p {
+    color: #64748b;
+
+    font-size: 14px;
+
+    margin: 0;
+}
+
+
+/* =========================
+   CONTACT FORM
+========================= */
+
+.contact-form {
+    background: white;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 16px;
+
+    padding: 35px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.05);
+}
+
+
+.contact-form h2 {
+    color: #111827;
+
+    font-size: 30px;
+
+    margin-bottom: 12px;
+}
+
+
+.contact-form > p {
+    color: #64748b;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+
+.form-group label {
+    display: block;
+
+    color: #111827;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    margin-bottom: 7px;
+}
+
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 12px 14px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px #dbeafe;
+}
+
+
+.form-group textarea {
+    min-height: 130px;
+
+    resize: vertical;
+}
+
+
+.contact-submit {
+    width: 100%;
+
+    border: none;
+
+    padding: 13px 20px;
+
+    background: #2563eb;
+
+    color: white;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.contact-submit:hover {
+    background: #1d4ed8;
+}
+
+
+/* =========================
+   GUIDES
+========================= */
+
+.guides-section {
+    padding: 80px 20px;
+
+    background: white;
+}
+
+
+.guides-title {
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+
+.guides-title h2 {
+    color: #111827;
+
+    font-size: 35px;
+
+    margin-bottom: 10px;
+}
+
+
+.guides-title p {
+    color: #64748b;
+}
+
+
+.guides-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.guide-card {
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 14px;
+
+    padding: 30px 25px;
+
+    transition: 0.3s;
+}
+
+
+.guide-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.07);
+}
+
+
+.guide-number {
+    width: 48px;
+    height: 48px;
+
+    background: #2563eb;
+
+    color: white;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+
+    font-weight: 800;
+
+    margin-bottom: 18px;
+}
+
+
+.guide-card h3 {
+    color: #111827;
+
+    font-size: 19px;
+
+    margin-bottom: 10px;
+}
+
+
+.guide-card p {
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   FAQ
+========================= */
+
+.faq-section {
+    padding: 80px 20px;
+
+    background: #f8fafc;
+}
+
+
+.faq-container {
+    max-width: 850px;
+
+    margin: auto;
+}
+
+
+.faq-title {
+    text-align: center;
+
+    margin-bottom: 40px;
+}
+
+
+.faq-title h2 {
+    color: #111827;
+
+    font-size: 35px;
+
+    margin-bottom: 10px;
+}
+
+
+.faq-title p {
+    color: #64748b;
+}
+
+
+.faq-item {
+    background: white;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 10px;
+
+    padding: 22px;
+
+    margin-bottom: 15px;
+}
+
+
+.faq-item h3 {
+    color: #111827;
+
+    font-size: 17px;
+
+    margin-bottom: 8px;
+}
+
+
+.faq-item p {
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin: 0;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.contact-cta {
+    padding: 75px 20px;
+
+    background: #2563eb;
+
+    color: white;
+
+    text-align: center;
+}
+
+
+.contact-cta h2 {
+    font-size: 36px;
+
+    margin-bottom: 12px;
+}
+
+
+.contact-cta p {
+    max-width: 650px;
+
+    margin: 0 auto 25px;
+
+    color: #dbeafe;
+
+    line-height: 1.7;
+}
+
+
+.whatsapp-button {
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    background: white;
+
+    color: #2563eb;
+
+    border-radius: 8px;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+
+.whatsapp-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.15);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .guides-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .contact-hero h1 {
+        font-size: 40px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .contact-hero {
+        padding: 60px 20px;
+    }
+
+
+    .contact-hero h1 {
+        font-size: 34px;
+    }
+
+
+    .contact-hero p {
+        font-size: 15px;
+    }
+
+
+    .contact-info,
+    .contact-form {
+        padding: 25px;
+    }
+
+
+    .guides-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .guides-title h2,
+    .faq-title h2 {
+        font-size: 29px;
+    }
+
+
+    .contact-cta h2 {
+        font-size: 29px;
+    }
+
+}
+
+</style>
+
+
+
+<div class="contact-page">
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="contact-hero">
+
+    <h1>
+        Contact <span>RAFEH TECH</span>
+    </h1>
+
+    <p>
+        Have a question about laptops, mobiles, tablets
+        or web development? Feel free to contact me.
+    </p>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT INFORMATION
+========================= -->
+
+<section class="contact-section">
+
+    <div class="contact-container">
+
+        <div class="contact-grid">
+
+
+            <!-- CONTACT INFO -->
+
+            <div class="contact-info">
+
+                <h2>
+                    Get In Touch
+                </h2>
+
+                <p>
+                    You can contact me through email or
+                    WhatsApp. I will try my best to respond
+                    as soon as possible.
+                </p>
+
+
+                <!-- EMAIL -->
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        ✉
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Email
+                        </h3>
+
+                        <a href="mailto:rafehshahofficialmail@gmail.com">
+                            rafehshahofficialmail@gmail.com
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- WHATSAPP -->
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        ☎
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            WhatsApp
+                        </h3>
+
+                        <a
+                            href="https://wa.me/923309387476"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            +92 330 9387476
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- WEBSITE -->
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        🌐
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Website
+                        </h3>
+
+                        <p>
+                            RAFEH TECH
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EDUCATION -->
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        🎓
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Learning
+                        </h3>
+
+                        <p>
+                            Web Development at CIMT Academy
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- CONTACT FORM -->
+
+            <div class="contact-form">
+
+                <h2>
+                    Send A Message
+                </h2>
+
+                <p>
+                    Fill out the form below to share your
+                    question or message.
+                </p>
+
+
+                <form
+                    action="mailto:rafehshahofficialmail@gmail.com"
+                    method="post"
+                    enctype="text/plain"
+                >
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Your Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="Name"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Your Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="Email"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="subject">
+                            Subject
+                        </label>
+
+                        <select
+                            id="subject"
+                            name="Subject"
+                        >
+
+                            <option>
+                                Laptop Question
+                            </option>
+
+                            <option>
+                                Mobile Question
+                            </option>
+
+                            <option>
+                                Tablet Question
+                            </option>
+
+                            <option>
+                                Web Development
+                            </option>
+
+                            <option>
+                                General Question
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="message">
+                            Your Message
+                        </label>
+
+                        <textarea
+                            id="message"
+                            name="Message"
+                            placeholder="Write your message..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="contact-submit"
+                    >
+                        Send Message
+                    </button>
+
+                </form>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     GUIDES
+========================= -->
+
+<section class="guides-section">
+
+    <div class="contact-container">
+
+
+        <div class="guides-title">
+
+            <h2>
+                Helpful Guides
+            </h2>
+
+            <p>
+                Some simple guides to help you choose
+                and understand your devices.
+            </p>
+
+        </div>
+
+
+
+        <div class="guides-grid">
+
+
+            <div class="guide-card">
+
+                <div class="guide-number">
+                    01
+                </div>
+
+                <h3>
+                    How To Choose A Laptop
+                </h3>
+
+                <p>
+                    Before buying a laptop, consider the
+                    processor, RAM, storage, display and
+                    your main purpose such as study,
+                    business or gaming.
+                </p>
+
+            </div>
+
+
+
+            <div class="guide-card">
+
+                <div class="guide-number">
+                    02
+                </div>
+
+                <h3>
+                    How To Choose A Mobile
+                </h3>
+
+                <p>
+                    Check the processor, RAM, storage,
+                    camera, battery, display and software
+                    features before choosing a smartphone.
+                </p>
+
+            </div>
+
+
+
+            <div class="guide-card">
+
+                <div class="guide-number">
+                    03
+                </div>
+
+                <h3>
+                    How To Choose A Tablet
+                </h3>
+
+                <p>
+                    Think about screen size, battery life,
+                    storage, performance and whether you
+                    need Wi-Fi or cellular connectivity.
+                </p>
+
+            </div>
+
+
+
+            <div class="guide-card">
+
+                <div class="guide-number">
+                    04
+                </div>
+
+                <h3>
+                    Take Care Of Your Device
+                </h3>
+
+                <p>
+                    Keep your device clean, use a suitable
+                    protective case and avoid extreme heat
+                    or unnecessary physical damage.
+                </p>
+
+            </div>
+
+
+
+            <div class="guide-card">
+
+                <div class="guide-number">
+                    05
+                </div>
+
+                <h3>
+                    Keep Software Updated
+                </h3>
+
+                <p>
+                    Regular software updates can improve
+                    security, stability and compatibility
+                    with newer applications.
+                </p>
+
+            </div>
+
+
+
+            <div class="guide-card">
+
+                <div class="guide-number">
+                    06
+                </div>
+
+                <h3>
+                    Need Help?
+                </h3>
+
+                <p>
+                    If you are unsure which device is suitable
+                    for your needs, contact RAFEH TECH and
+                    ask your question.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FAQ
+========================= -->
+
+<section class="faq-section">
+
+    <div class="faq-container">
+
+
+        <div class="faq-title">
+
+            <h2>
+                Frequently Asked Questions
+            </h2>
+
+            <p>
+                Some common questions about RAFEH TECH.
+            </p>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <h3>
+                What is RAFEH TECH?
+            </h3>
+
+            <p>
+                RAFEH TECH is a technology-focused website
+                created as part of my web development learning
+                journey.
+            </p>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <h3>
+                Who created this website?
+            </h3>
+
+            <p>
+                This website was created by Rafeh Shah
+                as a web development learning project.
+            </p>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <h3>
+                What am I learning?
+            </h3>
+
+            <p>
+                I am currently learning web development
+                and practicing technologies such as HTML,
+                CSS, JavaScript and WordPress.
+            </p>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <h3>
+                How can I contact Rafeh?
+            </h3>
+
+            <p>
+                You can contact me through the email address
+                or WhatsApp number provided on this page.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="contact-cta">
+
+    <h2>
+        Let's Connect
+    </h2>
+
+    <p>
+        Have a question or want to discuss technology,
+        devices or web development? Send me a message.
+    </p>
+
+    <a
+        href="https://wa.me/923309387476"
+        target="_blank"
+        rel="noopener"
+        class="whatsapp-button"
+    >
+        Chat On WhatsApp
+    </a>
+
+</section>
+
+
+</div>
+
+
+<?php get_footer(); ?>
