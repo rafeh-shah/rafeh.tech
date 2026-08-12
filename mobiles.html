@@ -1,1 +1,1033 @@
+<?php
+/*
+Template Name: Mobiles Page
+*/
+?>
 
+<?php get_header(); ?>
+
+
+<style>
+
+/* =========================
+   MOBILE PAGE
+========================= */
+
+.mobiles-page {
+    background: #f8fafc;
+}
+
+
+/* =========================
+   PAGE HERO
+========================= */
+
+.mobile-page-hero {
+    padding: 75px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0f172a,
+            #1e3a8a
+        );
+
+    color: white;
+
+    text-align: center;
+}
+
+
+.mobile-page-hero h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+
+.mobile-page-hero h1 span {
+    color: #38bdf8;
+}
+
+
+.mobile-page-hero p {
+    max-width: 650px;
+    margin: auto;
+
+    color: #dbeafe;
+    font-size: 17px;
+}
+
+
+/* =========================
+   PRODUCTS SECTION
+========================= */
+
+.mobile-products {
+    padding: 75px 20px;
+}
+
+
+.mobile-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+.mobile-section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+
+.mobile-section-title h2 {
+    font-size: 35px;
+    color: #111827;
+    margin-bottom: 10px;
+}
+
+
+.mobile-section-title p {
+    color: #64748b;
+}
+
+
+/* =========================
+   PRODUCT GRID
+========================= */
+
+.mobile-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 28px;
+}
+
+
+/* =========================
+   PRODUCT CARD
+========================= */
+
+.mobile-card {
+    background: white;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+
+.mobile-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.08);
+
+    border-color: #bfdbfe;
+}
+
+
+/* =========================
+   DEVICE IMAGE AREA
+========================= */
+
+.mobile-device-image {
+    height: 270px;
+
+    background: #f1f5f9;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+}
+
+
+/* =========================
+   DUMMY MOBILE
+========================= */
+
+.dummy-mobile {
+    width: 145px;
+    height: 245px;
+
+    background: #111827;
+
+    border: 6px solid #334155;
+
+    border-radius: 25px;
+
+    position: relative;
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,0.20);
+
+    overflow: hidden;
+}
+
+
+.mobile-screen {
+    position: absolute;
+
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #2563eb,
+            #06b6d4
+        );
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+.mobile-screen::after {
+    content: "RAFEH";
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+/* CAMERA */
+
+.mobile-camera {
+    position: absolute;
+
+    top: 10px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 38px;
+    height: 8px;
+
+    background: #020617;
+
+    border-radius: 10px;
+
+    z-index: 5;
+}
+
+
+/* =========================
+   PRODUCT CONTENT
+========================= */
+
+.mobile-info {
+    padding: 25px;
+}
+
+
+.mobile-info h3 {
+    color: #111827;
+
+    font-size: 21px;
+
+    margin-bottom: 10px;
+}
+
+
+.mobile-description {
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================
+   SPECS
+========================= */
+
+.mobile-specs {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-bottom: 20px;
+}
+
+
+.mobile-spec {
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    padding: 5px 9px;
+
+    border-radius: 5px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   PRICE
+========================= */
+
+.mobile-product-bottom {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+}
+
+
+.mobile-price {
+    color: #111827;
+
+    font-size: 21px;
+
+    font-weight: 800;
+}
+
+
+.mobile-view-product {
+    padding: 9px 15px;
+
+    background: #2563eb;
+
+    color: white;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+
+.mobile-view-product:hover {
+    background: #1d4ed8;
+}
+
+
+/* =========================
+   INFORMATION
+========================= */
+
+.mobile-info-section {
+    padding: 75px 20px;
+
+    background: white;
+}
+
+
+.mobile-info-content {
+    max-width: 850px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+
+.mobile-info-content h2 {
+    color: #111827;
+
+    font-size: 34px;
+
+    margin-bottom: 15px;
+}
+
+
+.mobile-info-content p {
+    color: #64748b;
+
+    line-height: 1.8;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.mobile-cta {
+    padding: 70px 20px;
+
+    background: #2563eb;
+
+    color: white;
+
+    text-align: center;
+}
+
+
+.mobile-cta h2 {
+    font-size: 35px;
+
+    margin-bottom: 12px;
+}
+
+
+.mobile-cta p {
+    color: #dbeafe;
+
+    max-width: 600px;
+
+    margin: 0 auto 25px;
+}
+
+
+.mobile-cta a {
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    background: white;
+
+    color: #2563eb;
+
+    border-radius: 8px;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .mobile-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .mobile-page-hero h1 {
+        font-size: 40px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .mobile-page-hero {
+        padding: 60px 20px;
+    }
+
+
+    .mobile-page-hero h1 {
+        font-size: 34px;
+    }
+
+
+    .mobile-page-hero p {
+        font-size: 15px;
+    }
+
+
+    .mobile-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .mobile-section-title h2 {
+        font-size: 29px;
+    }
+
+
+    .mobile-cta h2 {
+        font-size: 29px;
+    }
+
+}
+
+</style>
+
+
+
+<div class="mobiles-page">
+
+
+<!-- =========================
+     PAGE HERO
+========================= -->
+
+<section class="mobile-page-hero">
+
+    <h1>
+        Explore Our
+        <span>Mobiles</span>
+    </h1>
+
+    <p>
+        Discover modern smartphones with powerful
+        performance, beautiful displays and advanced features.
+    </p>
+
+</section>
+
+
+
+<!-- =========================
+     MOBILE PRODUCTS
+========================= -->
+
+<section class="mobile-products">
+
+    <div class="mobile-container">
+
+
+        <div class="mobile-section-title">
+
+            <h2>
+                Featured Mobile Phones
+            </h2>
+
+            <p>
+                Choose the smartphone that fits your lifestyle.
+            </p>
+
+        </div>
+
+
+
+        <div class="mobile-grid">
+
+
+            <!-- =====================
+                 MOBILE 1
+            ====================== -->
+
+            <div class="mobile-card">
+
+                <div class="mobile-device-image">
+
+                    <div class="dummy-mobile">
+
+                        <div class="mobile-camera"></div>
+
+                        <div class="mobile-screen"></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="mobile-info">
+
+                    <h3>
+                        RAFEH X Pro
+                    </h3>
+
+
+                    <p class="mobile-description">
+                        A premium smartphone with powerful
+                        performance and a beautiful display.
+                    </p>
+
+
+                    <div class="mobile-specs">
+
+                        <span class="mobile-spec">
+                            8GB RAM
+                        </span>
+
+                        <span class="mobile-spec">
+                            256GB
+                        </span>
+
+                        <span class="mobile-spec">
+                            50MP Camera
+                        </span>
+
+                        <span class="mobile-spec">
+                            5G
+                        </span>
+
+                    </div>
+
+
+                    <div class="mobile-product-bottom">
+
+                        <div class="mobile-price">
+                            Rs. 85,000
+                        </div>
+
+                        <a
+                            href="contact.html"
+                            class="mobile-view-product"
+                        >
+                            Details
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================
+                 MOBILE 2
+            ====================== -->
+
+            <div class="mobile-card">
+
+                <div class="mobile-device-image">
+
+                    <div class="dummy-mobile">
+
+                        <div class="mobile-camera"></div>
+
+                        <div class="mobile-screen"></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="mobile-info">
+
+                    <h3>
+                        RAFEH Ultra 5G
+                    </h3>
+
+
+                    <p class="mobile-description">
+                        Stylish 5G smartphone designed for
+                        everyday performance and entertainment.
+                    </p>
+
+
+                    <div class="mobile-specs">
+
+                        <span class="mobile-spec">
+                            12GB RAM
+                        </span>
+
+                        <span class="mobile-spec">
+                            512GB
+                        </span>
+
+                        <span class="mobile-spec">
+                            108MP Camera
+                        </span>
+
+                        <span class="mobile-spec">
+                            5G
+                        </span>
+
+                    </div>
+
+
+                    <div class="mobile-product-bottom">
+
+                        <div class="mobile-price">
+                            Rs. 115,000
+                        </div>
+
+                        <a
+                            href="contact.html"
+                            class="mobile-view-product"
+                        >
+                            Details
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================
+                 MOBILE 3
+            ====================== -->
+
+            <div class="mobile-card">
+
+                <div class="mobile-device-image">
+
+                    <div class="dummy-mobile">
+
+                        <div class="mobile-camera"></div>
+
+                        <div class="mobile-screen"></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="mobile-info">
+
+                    <h3>
+                        RAFEH Note Max
+                    </h3>
+
+
+                    <p class="mobile-description">
+                        Large display smartphone ideal for
+                        productivity, videos and gaming.
+                    </p>
+
+
+                    <div class="mobile-specs">
+
+                        <span class="mobile-spec">
+                            12GB RAM
+                        </span>
+
+                        <span class="mobile-spec">
+                            256GB
+                        </span>
+
+                        <span class="mobile-spec">
+                            64MP Camera
+                        </span>
+
+                        <span class="mobile-spec">
+                            5G
+                        </span>
+
+                    </div>
+
+
+                    <div class="mobile-product-bottom">
+
+                        <div class="mobile-price">
+                            Rs. 95,000
+                        </div>
+
+                        <a
+                            href="contact.html"
+                            class="mobile-view-product"
+                        >
+                            Details
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================
+                 MOBILE 4
+            ====================== -->
+
+            <div class="mobile-card">
+
+                <div class="mobile-device-image">
+
+                    <div class="dummy-mobile">
+
+                        <div class="mobile-camera"></div>
+
+                        <div class="mobile-screen"></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="mobile-info">
+
+                    <h3>
+                        RAFEH Lite
+                    </h3>
+
+
+                    <p class="mobile-description">
+                        Affordable and reliable smartphone
+                        for everyday communication and entertainment.
+                    </p>
+
+
+                    <div class="mobile-specs">
+
+                        <span class="mobile-spec">
+                            6GB RAM
+                        </span>
+
+                        <span class="mobile-spec">
+                            128GB
+                        </span>
+
+                        <span class="mobile-spec">
+                            50MP Camera
+                        </span>
+
+                        <span class="mobile-spec">
+                            4G
+                        </span>
+
+                    </div>
+
+
+                    <div class="mobile-product-bottom">
+
+                        <div class="mobile-price">
+                            Rs. 55,000
+                        </div>
+
+                        <a
+                            href="contact.html"
+                            class="mobile-view-product"
+                        >
+                            Details
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================
+                 MOBILE 5
+            ====================== -->
+
+            <div class="mobile-card">
+
+                <div class="mobile-device-image">
+
+                    <div class="dummy-mobile">
+
+                        <div class="mobile-camera"></div>
+
+                        <div class="mobile-screen"></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="mobile-info">
+
+                    <h3>
+                        RAFEH Gaming Phone
+                    </h3>
+
+
+                    <p class="mobile-description">
+                        High-performance smartphone made for
+                        gaming and demanding applications.
+                    </p>
+
+
+                    <div class="mobile-specs">
+
+                        <span class="mobile-spec">
+                            16GB RAM
+                        </span>
+
+                        <span class="mobile-spec">
+                            512GB
+                        </span>
+
+                        <span class="mobile-spec">
+                            64MP Camera
+                        </span>
+
+                        <span class="mobile-spec">
+                            5G
+                        </span>
+
+                    </div>
+
+
+                    <div class="mobile-product-bottom">
+
+                        <div class="mobile-price">
+                            Rs. 135,000
+                        </div>
+
+                        <a
+                            href="contact.html"
+                            class="mobile-view-product"
+                        >
+                            Details
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================
+                 MOBILE 6
+            ====================== -->
+
+            <div class="mobile-card">
+
+                <div class="mobile-device-image">
+
+                    <div class="dummy-mobile">
+
+                        <div class="mobile-camera"></div>
+
+                        <div class="mobile-screen"></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="mobile-info">
+
+                    <h3>
+                        RAFEH Camera Pro
+                    </h3>
+
+
+                    <p class="mobile-description">
+                        A camera-focused smartphone for users
+                        who love photography and video.
+                    </p>
+
+
+                    <div class="mobile-specs">
+
+                        <span class="mobile-spec">
+                            12GB RAM
+                        </span>
+
+                        <span class="mobile-spec">
+                            256GB
+                        </span>
+
+                        <span class="mobile-spec">
+                            200MP Camera
+                        </span>
+
+                        <span class="mobile-spec">
+                            5G
+                        </span>
+
+                    </div>
+
+
+                    <div class="mobile-product-bottom">
+
+                        <div class="mobile-price">
+                            Rs. 125,000
+                        </div>
+
+                        <a
+                            href="contact.html"
+                            class="mobile-view-product"
+                        >
+                            Details
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     INFORMATION
+========================= -->
+
+<section class="mobile-info-section">
+
+    <div class="mobile-info-content">
+
+        <h2>
+            Find The Right Smartphone
+        </h2>
+
+        <p>
+            Whether you need a smartphone for photography,
+            gaming, business, education or everyday use,
+            RAFEH TECH offers different devices designed
+            to match different requirements and budgets.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="mobile-cta">
+
+    <h2>
+        Need Help Choosing A Mobile?
+    </h2>
+
+    <p>
+        Contact us and find the smartphone that
+        matches your needs and budget.
+    </p>
+
+    <a href="contact.html">
+        Contact Us
+    </a>
+
+</section>
+
+
+</div>
+
+
+<?php get_footer(); ?>
