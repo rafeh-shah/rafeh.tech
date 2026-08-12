@@ -9,6 +9,254 @@
 
 
 <style>
+   /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f9fc;
+            color: #1e293b;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .header {
+            width: 100%;
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+
+        .header-container {
+            max-width: 1200px;
+            height: 78px;
+            margin: auto;
+            padding: 0 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+
+        /* =========================
+           LOGO
+        ========================= */
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            color: #111827;
+            font-size: 24px;
+            font-weight: 800;
+        }
+
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: linear-gradient(
+                135deg,
+                #2563eb,
+                #06b6d4
+            );
+
+            color: white;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+
+
+        .logo span {
+            color: #2563eb;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        .nav ul {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            list-style: none;
+        }
+
+
+        .nav ul li a {
+            display: block;
+
+            padding: 10px 15px;
+
+            color: #374151;
+            font-size: 15px;
+            font-weight: 600;
+
+            border-radius: 7px;
+
+            transition: 0.3s;
+        }
+
+
+        .nav ul li a:hover {
+            color: #2563eb;
+            background: #eff6ff;
+        }
+
+
+        /* =========================
+           CONTACT BUTTON
+        ========================= */
+
+        .contact-btn {
+            padding: 11px 20px;
+
+            background: #2563eb;
+            color: white;
+
+            border-radius: 8px;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            transition: 0.3s;
+        }
+
+
+        .contact-btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           MOBILE BUTTON
+        ========================= */
+
+        .menu-btn {
+            display: none;
+
+            border: none;
+            background: transparent;
+
+            font-size: 28px;
+            cursor: pointer;
+
+            color: #1e293b;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .header-container {
+                height: 70px;
+            }
+
+
+            .nav {
+                display: none;
+
+                position: absolute;
+
+                top: 70px;
+                left: 0;
+
+                width: 100%;
+
+                background: white;
+
+                padding: 15px 20px;
+
+                border-top: 1px solid #e5e7eb;
+
+                box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            }
+
+
+            .nav.active {
+                display: block;
+            }
+
+
+            .nav ul {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+
+            .nav ul li a {
+                padding: 12px 15px;
+            }
+
+
+            .contact-btn {
+                display: none;
+            }
+
+
+            .menu-btn {
+                display: block;
+            }
+
+        }
+
+
+        /* =========================
+           SMALL MOBILE
+        ========================= */
+
+        @media (max-width: 480px) {
+
+            .header-container {
+                padding: 0 15px;
+            }
+
+
+            .logo {
+                font-size: 20px;
+            }
+
+
+            .logo-icon {
+                width: 36px;
+                height: 36px;
+                font-size: 17px;
+            }
+
+        }
+
 
 /* =========================
    HERO SECTION
@@ -543,6 +791,107 @@
 }
 
 </style>
+<header class="header">
+
+    <div class="header-container">
+
+
+        <!-- LOGO -->
+
+        <a href="index.html" class="logo">
+
+            <div class="logo-icon">
+                💻
+            </div>
+
+            RAFEH <span>TECH</span>
+
+        </a>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="nav" id="nav">
+
+            <ul>
+
+                <li>
+                    <a href="./index">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="./laptops">
+                        Laptops
+                    </a>
+                </li>
+
+                <li>
+                    <a href="./mobiles">
+                        Mobiles
+                    </a>
+                </li>
+
+                <li>
+                    <a href="./tablets">
+                        Tablets
+                    </a>
+                </li>
+
+                <li>
+                    <a href="./about">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="./contact">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <!-- CONTACT BUTTON -->
+
+        <a href="contact.html" class="contact-btn">
+            Contact Us
+        </a>
+
+
+        <!-- MOBILE MENU -->
+
+        <button class="menu-btn" onclick="toggleMenu()">
+            ☰
+        </button>
+
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+    function toggleMenu() {
+
+        const nav = document.getElementById("nav");
+
+        nav.classList.toggle("active");
+
+    }
+
+</script>
+
+ 
 
 
 <!-- =========================
