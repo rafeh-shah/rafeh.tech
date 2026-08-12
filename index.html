@@ -1,1 +1,875 @@
+<?php
+/*
+ * RAFEH TECH - Home Page
+ * Laptop & Mobile Website
+ */
+?>
+
+<?php get_header(); ?>
+
+
+<style>
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    min-height: 560px;
+    background:
+        linear-gradient(
+            135deg,
+            #0f172a,
+            #1e3a8a
+        );
+
+    color: #ffffff;
+
+    display: flex;
+    align-items: center;
+
+    padding: 80px 20px;
+}
+
+
+.hero-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 50px;
+}
+
+
+.hero-content {
+    max-width: 600px;
+}
+
+
+.hero-small-title {
+    display: inline-block;
+
+    padding: 7px 14px;
+
+    background: rgba(255,255,255,0.1);
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    border-radius: 30px;
+
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+
+.hero h1 {
+    font-size: 54px;
+    line-height: 1.15;
+
+    margin-bottom: 20px;
+}
+
+
+.hero h1 span {
+    color: #38bdf8;
+}
+
+
+.hero p {
+    font-size: 18px;
+    color: #dbeafe;
+
+    max-width: 550px;
+
+    margin-bottom: 30px;
+}
+
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+.primary-btn {    display: inline-block;
+
+    padding: 13px 25px;
+
+    background: #2563eb;
+    color: white;
+
+    border-radius: 8px;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+
+.primary-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+
+.secondary-btn {
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    background: transparent;
+
+    border: 1px solid rgba(255,255,255,0.4);
+
+    color: white;
+
+    border-radius: 8px;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+
+.secondary-btn:hover {
+    background: white;
+    color: #1e3a8a;
+}
+
+
+/* =========================
+   HERO DEVICE
+========================= */
+
+.hero-device {
+    width: 430px;
+    height: 330px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+
+.laptop {
+    width: 360px;
+}
+
+
+.laptop-screen {
+    height: 220px;
+
+    background: #111827;
+
+    border: 8px solid #334155;
+
+    border-radius: 15px 15px 5px 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        0 25px 50px rgba(0,0,0,0.35);
+}
+
+
+.laptop-screen span {
+    font-size: 80px;
+}
+
+
+.laptop-base {
+    width: 410px;
+    height: 18px;
+
+    background: #64748b;
+
+    border-radius: 0 0 20px 20px;
+
+    margin-left: -25px;
+}
+
+
+/* =========================
+   CATEGORIES
+========================= */
+
+.categories {
+    padding: 80px 20px;
+
+    background: #ffffff;
+}
+
+
+.section-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+
+.section-heading h2 {
+    font-size: 36px;
+    color: #111827;
+
+    margin-bottom: 10px;
+}
+
+
+.section-heading p {
+    color: #64748b;
+    font-size: 16px;
+}
+
+
+.category-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.category-card {
+    padding: 35px 25px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 14px;
+
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+
+.category-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,0.08);
+
+    border-color: #bfdbfe;
+}
+
+
+.category-icon {
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 15px;
+
+    background: #eff6ff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 34px;
+}
+
+
+.category-card h3 {
+    font-size: 21px;
+
+    margin-bottom: 10px;
+
+    color: #1e293b;
+}
+
+
+.category-card p {
+    color: #64748b;
+
+    font-size: 14px;
+
+    margin-bottom: 20px;
+}
+
+
+.category-link {
+    color: #2563eb;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   FEATURE SECTION
+========================= */
+
+.features {
+    padding: 80px 20px;
+
+    background: #f8fafc;
+}
+
+
+.feature-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.feature-box {
+    background: white;
+
+    padding: 30px 20px;
+
+    text-align: center;
+
+    border-radius: 12px;
+
+    border: 1px solid #e2e8f0;
+}
+
+
+.feature-icon {
+    font-size: 35px;
+
+    margin-bottom: 15px;
+}
+
+
+.feature-box h3 {
+    font-size: 17px;
+
+    margin-bottom: 8px;
+}
+
+
+.feature-box p {
+    font-size: 14px;
+
+    color: #64748b;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+    padding: 80px 20px;
+
+    background: #2563eb;
+
+    color: white;
+
+    text-align: center;
+}
+
+
+.cta h2 {
+    font-size: 38px;
+
+    margin-bottom: 15px;
+}
+
+
+.cta p {
+    max-width: 650px;
+
+    margin: 0 auto 25px;
+
+    color: #dbeafe;
+}
+
+
+.cta-button {
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    background: white;
+
+    color: #2563eb;
+
+    border-radius: 8px;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+
+.cta-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.15);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .hero {
+        padding: 70px 20px;
+    }
+
+
+    .hero-container {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+
+    .hero-content {
+        max-width: 700px;
+    }
+
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+
+    .hero-device {
+        width: 100%;
+    }
+
+
+    .category-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .feature-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .hero {
+        min-height: auto;
+
+        padding: 60px 18px;
+    }
+
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+
+    .hero p {
+        font-size: 16px;
+    }
+
+
+    .hero-device {
+        transform: scale(0.75);
+        margin-top: -20px;
+    }
+
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .section-heading h2 {
+        font-size: 30px;
+    }
+
+
+    .cta h2 {
+        font-size: 30px;
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+
+    .hero-device {
+        transform: scale(0.6);
+        margin-left: -45px;
+    }
+
+}
+
+</style>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-container">
+
+
+        <div class="hero-content">
+
+            <div class="hero-small-title">
+                🚀 Next Generation Technology
+            </div>
+
+
+            <h1>
+                Discover The
+                <span>Latest Technology</span>
+            </h1>
+
+
+            <p>
+                Explore premium laptops, smartphones and tablets
+                designed to make your digital life faster,
+                smarter and better.
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a
+                    href="./laptops"
+                    class="primary-btn"
+                >
+                    Explore Laptops
+                </a>
+
+
+                <a
+                    href="./mobiles"
+                    class="secondary-btn"
+                >
+                    View Mobiles
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- LAPTOP DESIGN -->
+
+        <div class="hero-device">
+
+            <div class="laptop">
+
+                <div class="laptop-screen">
+
+                    <span>💻</span>
+
+                </div>
+
+                <div class="laptop-base"></div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CATEGORIES
+========================= -->
+
+<section class="categories">
+
+    <div class="section-container">
+
+
+        <div class="section-heading">
+
+            <h2>
+                Explore Our Categories
+            </h2>
+
+            <p>
+                Find the right device for your needs.
+            </p>
+
+        </div>
+
+
+        <div class="category-grid">
+
+
+            <!-- LAPTOP -->
+
+            <div class="category-card">
+
+                <div class="category-icon">
+                    💻
+                </div>
+
+                <h3>
+                    Laptops
+                </h3>
+
+                <p>
+                    Powerful laptops for work,
+                    study, gaming and everyday use.
+                </p>
+
+                <a
+                    href="./laptops"
+                    class="category-link"
+                >
+                    View Laptops →
+                </a>
+
+            </div>
+
+
+            <!-- MOBILE -->
+
+            <div class="category-card">
+
+                <div class="category-icon">
+                    📱
+                </div>
+
+                <h3>
+                    Mobile Phones
+                </h3>
+
+                <p>
+                    Discover modern smartphones
+                    with powerful performance.
+                </p>
+
+                <a
+                    href="./mobiles"
+                    class="category-link"
+                >
+                    View Mobiles →
+                </a>
+
+            </div>
+
+
+            <!-- TABLETS -->
+
+            <div class="category-card">
+
+                <div class="category-icon">
+                    📲
+                </div>
+
+                <h3>
+                    Tablets
+                </h3>
+
+                <p>
+                    Portable tablets for entertainment,
+                    work and learning.
+                </p>
+
+                <a
+                    href="./tablets"
+                    class="category-link"
+                >
+                    View Tablets →
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FEATURES
+========================= -->
+
+<section class="features">
+
+    <div class="section-container">
+
+
+        <div class="section-heading">
+
+            <h2>
+                Why Choose RAFEH TECH?
+            </h2>
+
+            <p>
+                Technology you can trust.
+            </p>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+
+            <div class="feature-box">
+
+                <div class="feature-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    Latest Technology
+                </h3>
+
+                <p>
+                    Discover modern and powerful
+                    technology products.
+                </p>
+
+            </div>
+
+
+            <div class="feature-box">
+
+                <div class="feature-icon">
+                    🛡️
+                </div>
+
+                <h3>
+                    Quality Products
+                </h3>
+
+                <p>
+                    We focus on reliable and
+                    quality devices.
+                </p>
+
+            </div>
+
+
+            <div class="feature-box">
+
+                <div class="feature-icon">
+                    💰
+                </div>
+
+                <h3>
+                    Best Value
+                </h3>
+
+                <p>
+                    Find great technology at
+                    competitive prices.
+                </p>
+
+            </div>
+
+
+            <div class="feature-box">
+
+                <div class="feature-icon">
+                    📞
+                </div>
+
+                <h3>
+                    Customer Support
+                </h3>
+
+                <p>
+                    Get help whenever you
+                    need assistance.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta">
+
+    <div class="section-container">
+
+        <h2>
+            Ready To Find Your Device?
+        </h2>
+
+        <p>
+            Explore our collection of laptops,
+            smartphones and tablets today.
+        </p>
+
+
+        <a
+            href="./contact"
+            class="cta-button"
+        >
+            Contact Us
+        </a>
+
+    </div>
+
+</section>
+
+
+<?php get_footer(); ?>
+
 
