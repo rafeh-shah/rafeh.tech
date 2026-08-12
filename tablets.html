@@ -1,1 +1,1044 @@
 
+<?php
+/*
+Template Name: Tablets Page
+*/
+?>
+
+<?php get_header(); ?>
+
+
+<style>
+
+/* =========================
+   TABLETS PAGE
+========================= */
+
+.tablets-page {
+    background: #f8fafc;
+}
+
+
+/* =========================
+   PAGE HERO
+========================= */
+
+.tablet-page-hero {
+    padding: 75px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0f172a,
+            #1e3a8a
+        );
+
+    color: white;
+
+    text-align: center;
+}
+
+
+.tablet-page-hero h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+
+.tablet-page-hero h1 span {
+    color: #38bdf8;
+}
+
+
+.tablet-page-hero p {
+    max-width: 650px;
+    margin: auto;
+
+    color: #dbeafe;
+    font-size: 17px;
+}
+
+
+/* =========================
+   PRODUCTS SECTION
+========================= */
+
+.tablet-products {
+    padding: 75px 20px;
+}
+
+
+.tablet-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+.tablet-section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+
+.tablet-section-title h2 {
+    font-size: 35px;
+    color: #111827;
+    margin-bottom: 10px;
+}
+
+
+.tablet-section-title p {
+    color: #64748b;
+}
+
+
+/* =========================
+   PRODUCT GRID
+========================= */
+
+.tablet-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 28px;
+}
+
+
+/* =========================
+   PRODUCT CARD
+========================= */
+
+.tablet-card {
+    background: white;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+
+.tablet-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.08);
+
+    border-color: #bfdbfe;
+}
+
+
+/* =========================
+   DEVICE IMAGE AREA
+========================= */
+
+.tablet-device-image {
+    height: 270px;
+
+    background: #f1f5f9;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+}
+
+
+/* =========================
+   DUMMY TABLET
+========================= */
+
+.dummy-tablet {
+    width: 245px;
+    height: 170px;
+
+    background: #111827;
+
+    border: 7px solid #334155;
+
+    border-radius: 16px;
+
+    position: relative;
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,0.20);
+
+    padding: 8px;
+}
+
+
+.tablet-screen {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 8px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #06b6d4
+        );
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+
+.tablet-screen::after {
+    content: "RAFEH";
+
+    color: white;
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+/* TABLET CAMERA */
+
+.tablet-camera {
+    position: absolute;
+
+    top: 4px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 6px;
+    height: 6px;
+
+    background: #020617;
+
+    border-radius: 50%;
+
+    z-index: 5;
+}
+
+
+/* =========================
+   PRODUCT CONTENT
+========================= */
+
+.tablet-info {
+    padding: 25px;
+}
+
+
+.tablet-info h3 {
+    color: #111827;
+
+    font-size: 21px;
+
+    margin-bottom: 10px;
+}
+
+
+.tablet-description {
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================
+   SPECS
+========================= */
+
+.tablet-specs {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-bottom: 20px;
+}
+
+
+.tablet-spec {
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    padding: 5px 9px;
+
+    border-radius: 5px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   PRICE
+========================= */
+
+.tablet-product-bottom {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+}
+
+
+.tablet-price {
+    color: #111827;
+
+    font-size: 21px;
+
+    font-weight: 800;
+}
+
+
+.tablet-view-product {
+    padding: 9px 15px;
+
+    background: #2563eb;
+
+    color: white;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+
+.tablet-view-product:hover {
+    background: #1d4ed8;
+}
+
+
+/* =========================
+   INFORMATION
+========================= */
+
+.tablet-info-section {
+    padding: 75px 20px;
+
+    background: white;
+}
+
+
+.tablet-info-content {
+    max-width: 850px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+
+.tablet-info-content h2 {
+    color: #111827;
+
+    font-size: 34px;
+
+    margin-bottom: 15px;
+}
+
+
+.tablet-info-content p {
+    color: #64748b;
+
+    line-height: 1.8;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.tablet-cta {
+    padding: 70px 20px;
+
+    background: #2563eb;
+
+    color: white;
+
+    text-align: center;
+}
+
+
+.tablet-cta h2 {
+    font-size: 35px;
+
+    margin-bottom: 12px;
+}
+
+
+.tablet-cta p {
+    color: #dbeafe;
+
+    max-width: 600px;
+
+    margin: 0 auto 25px;
+}
+
+
+.tablet-cta a {
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    background: white;
+
+    color: #2563eb;
+
+    border-radius: 8px;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .tablet-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .tablet-page-hero h1 {
+        font-size: 40px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .tablet-page-hero {
+        padding: 60px 20px;
+    }
+
+
+    .tablet-page-hero h1 {
+        font-size: 34px;
+    }
+
+
+    .tablet-page-hero p {
+        font-size: 15px;
+    }
+
+
+    .tablet-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .tablet-section-title h2 {
+        font-size: 29px;
+    }
+
+
+    .tablet-cta h2 {
+        font-size: 29px;
+    }
+
+}
+
+</style>
+
+
+
+<div class="tablets-page">
+
+
+<!-- =========================
+     PAGE HERO
+========================= -->
+
+<section class="tablet-page-hero">
+
+    <h1>
+        Explore Our
+        <span>Tablets</span>
+    </h1>
+
+    <p>
+        Discover modern tablets with beautiful displays,
+        powerful performance and portable designs.
+    </p>
+
+</section>
+
+
+
+<!-- =========================
+     TABLET PRODUCTS
+========================= -->
+
+<section class="tablet-products">
+
+    <div class="tablet-container">
+
+
+        <div class="tablet-section-title">
+
+            <h2>
+                Featured Tablets
+            </h2>
+
+            <p>
+                Choose the tablet that fits your lifestyle.
+            </p>
+
+        </div>
+
+
+
+        <div class="tablet-grid">
+
+
+            <!-- =====================
+                 TABLET 1
+            ====================== -->
+
+            <div class="tablet-card">
+
+                <div class="tablet-device-image">
+
+                    <div class="dummy-tablet">
+
+                        <div class="tablet-screen">
+
+                            <div class="tablet-camera"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="tablet-info">
+
+                    <h3>
+                        RAFEH Tab Pro
+                    </h3>
+
+
+                    <p class="tablet-description">
+                        A powerful tablet for study,
+                        work, entertainment and everyday use.
+                    </p>
+
+
+                    <div class="tablet-specs">
+
+                        <span class="tablet-spec">
+                            8GB RAM
+                        </span>
+
+                        <span class="tablet-spec">
+                            256GB
+                        </span>
+
+                        <span class="tablet-spec">
+                            11" Display
+                        </span>
+
+                        <span class="tablet-spec">
+                            Wi-Fi
+                        </span>
+
+                    </div>
+
+
+                    <div class="tablet-product-bottom">
+
+                        <div class="tablet-price">
+                            Rs. 75,000
+                        </div>
+
+                        <a
+                            href="contact.html"
+                            class="tablet-view-product"
+                        >
+                            Details
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================
+                 TABLET 2
+            ====================== -->
+
+            <div class="tablet-card">
+
+                <div class="tablet-device-image">
+
+                    <div class="dummy-tablet">
+
+                        <div class="tablet-screen">
+
+                            <div class="tablet-camera"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="tablet-info">
+
+                    <h3>
+                        RAFEH Tab Ultra
+                    </h3>
+
+
+                    <p class="tablet-description">
+                        Premium tablet with a large display
+                        for productivity and entertainment.
+                    </p>
+
+
+                    <div class="tablet-specs">
+
+                        <span class="tablet-spec">
+                            12GB RAM
+                        </span>
+
+                        <span class="tablet-spec">
+                            512GB
+                        </span>
+
+                        <span class="tablet-spec">
+                            12.9" Display
+                        </span>
+
+                        <span class="tablet-spec">
+                            5G
+                        </span>
+
+                    </div>
+
+
+                    <div class="tablet-product-bottom">
+
+                        <div class="tablet-price">
+                            Rs. 125,000
+                        </div>
+
+                        <a
+                            href="contact.html"
+                            class="tablet-view-product"
+                        >
+                            Details
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================
+                 TABLET 3
+            ====================== -->
+
+            <div class="tablet-card">
+
+                <div class="tablet-device-image">
+
+                    <div class="dummy-tablet">
+
+                        <div class="tablet-screen">
+
+                            <div class="tablet-camera"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="tablet-info">
+
+                    <h3>
+                        RAFEH Student Tab
+                    </h3>
+
+
+                    <p class="tablet-description">
+                        Affordable tablet for students,
+                        online classes and learning.
+                    </p>
+
+
+                    <div class="tablet-specs">
+
+                        <span class="tablet-spec">
+                            6GB RAM
+                        </span>
+
+                        <span class="tablet-spec">
+                            128GB
+                        </span>
+
+                        <span class="tablet-spec">
+                            10.5" Display
+                        </span>
+
+                        <span class="tablet-spec">
+                            Wi-Fi
+                        </span>
+
+                    </div>
+
+
+                    <div class="tablet-product-bottom">
+
+                        <div class="tablet-price">
+                            Rs. 55,000
+                        </div>
+
+                        <a
+                            href="contact.html"
+                            class="tablet-view-product"
+                        >
+                            Details
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================
+                 TABLET 4
+            ====================== -->
+
+            <div class="tablet-card">
+
+                <div class="tablet-device-image">
+
+                    <div class="dummy-tablet">
+
+                        <div class="tablet-screen">
+
+                            <div class="tablet-camera"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="tablet-info">
+
+                    <h3>
+                        RAFEH Media Tab
+                    </h3>
+
+
+                    <p class="tablet-description">
+                        Designed for movies, videos,
+                        music and everyday entertainment.
+                    </p>
+
+
+                    <div class="tablet-specs">
+
+                        <span class="tablet-spec">
+                            8GB RAM
+                        </span>
+
+                        <span class="tablet-spec">
+                            256GB
+                        </span>
+
+                        <span class="tablet-spec">
+                            11" Display
+                        </span>
+
+                        <span class="tablet-spec">
+                            4G
+                        </span>
+
+                    </div>
+
+
+                    <div class="tablet-product-bottom">
+
+                        <div class="tablet-price">
+                            Rs. 68,000
+                        </div>
+
+                        <a
+                            href="contact.html"
+                            class="tablet-view-product"
+                        >
+                            Details
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================
+                 TABLET 5
+            ====================== -->
+
+            <div class="tablet-card">
+
+                <div class="tablet-device-image">
+
+                    <div class="dummy-tablet">
+
+                        <div class="tablet-screen">
+
+                            <div class="tablet-camera"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="tablet-info">
+
+                    <h3>
+                        RAFEH Gaming Tab
+                    </h3>
+
+
+                    <p class="tablet-description">
+                        High-performance tablet designed
+                        for gaming and demanding applications.
+                    </p>
+
+
+                    <div class="tablet-specs">
+
+                        <span class="tablet-spec">
+                            12GB RAM
+                        </span>
+
+                        <span class="tablet-spec">
+                            512GB
+                        </span>
+
+                        <span class="tablet-spec">
+                            12" Display
+                        </span>
+
+                        <span class="tablet-spec">
+                            5G
+                        </span>
+
+                    </div>
+
+
+                    <div class="tablet-product-bottom">
+
+                        <div class="tablet-price">
+                            Rs. 105,000
+                        </div>
+
+                        <a
+                            href="contact.html"
+                            class="tablet-view-product"
+                        >
+                            Details
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================
+                 TABLET 6
+            ====================== -->
+
+            <div class="tablet-card">
+
+                <div class="tablet-device-image">
+
+                    <div class="dummy-tablet">
+
+                        <div class="tablet-screen">
+
+                            <div class="tablet-camera"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="tablet-info">
+
+                    <h3>
+                        RAFEH Creator Tab
+                    </h3>
+
+
+                    <p class="tablet-description">
+                        Powerful tablet for designers,
+                        creators and professional users.
+                    </p>
+
+
+                    <div class="tablet-specs">
+
+                        <span class="tablet-spec">
+                            16GB RAM
+                        </span>
+
+                        <span class="tablet-spec">
+                            1TB
+                        </span>
+
+                        <span class="tablet-spec">
+                            13" Display
+                        </span>
+
+                        <span class="tablet-spec">
+                            5G
+                        </span>
+
+                    </div>
+
+
+                    <div class="tablet-product-bottom">
+
+                        <div class="tablet-price">
+                            Rs. 145,000
+                        </div>
+
+                        <a
+                            href="contact.html"
+                            class="tablet-view-product"
+                        >
+                            Details
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     INFORMATION
+========================= -->
+
+<section class="tablet-info-section">
+
+    <div class="tablet-info-content">
+
+        <h2>
+            Find The Right Tablet
+        </h2>
+
+        <p>
+            Whether you need a tablet for education,
+            business, entertainment, gaming or creative work,
+            RAFEH TECH offers different devices designed
+            to match different requirements and budgets.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="tablet-cta">
+
+    <h2>
+        Need Help Choosing A Tablet?
+    </h2>
+
+    <p>
+        Contact us and find the tablet that
+        matches your needs and budget.
+    </p>
+
+    <a href="contact.html">
+        Contact Us
+    </a>
+
+</section>
+
+
+</div>
+
+
+<?php get_footer(); ?>
