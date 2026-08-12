@@ -1,1 +1,1036 @@
+<?php
+/*
+Template Name: Laptops Page
+*/
+?>
+
+<?php get_header(); ?>
+
+<style>
+
+/* =========================
+   LAPTOP PAGE
+========================= */
+
+.laptops-page {
+    background: #f8fafc;
+}
+
+
+/* =========================
+   PAGE HERO
+========================= */
+
+.laptop-page-hero {
+    padding: 75px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0f172a,
+            #1e3a8a
+        );
+
+    color: white;
+
+    text-align: center;
+}
+
+
+.laptop-page-hero h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}  
+
+
+.laptop-page-hero h1 span {
+    color: #38bdf8;
+}
+
+
+.laptop-page-hero p {
+    max-width: 650px;
+    margin: auto;
+
+    color: #dbeafe;
+    font-size: 17px;
+}
+
+
+/* =========================
+   PRODUCTS SECTION
+========================= */
+
+.laptop-products {
+    padding: 75px 20px;
+}
+
+
+.laptop-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+.laptop-section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+
+.laptop-section-title h2 {
+    font-size: 35px;
+    color: #111827;
+    margin-bottom: 10px;
+}
+
+
+.laptop-section-title p {
+    color: #64748b;
+}
+
+
+/* =========================
+   PRODUCT GRID
+========================= */
+
+.laptop-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 28px;
+}
+
+
+/* =========================
+   PRODUCT CARD
+========================= */
+
+.laptop-card {
+    background: white;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+
+.laptop-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.08);
+
+    border-color: #bfdbfe;
+}
+
+
+/* =========================
+   DEVICE IMAGE AREA
+========================= */
+
+.device-image {
+    height: 240px;
+
+    background: #f1f5f9;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+}
+
+
+/* =========================
+   DUMMY LAPTOP
+========================= */
+
+.dummy-laptop {
+    width: 260px;
+}
+
+
+.laptop-display {
+    width: 230px;
+    height: 145px;
+
+    margin: auto;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #06b6d4
+        );
+
+    border: 7px solid #334155;
+
+    border-radius: 12px 12px 5px 5px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        0 12px 25px rgba(0,0,0,0.18);
+}
+
+
+.laptop-display::after {
+    content: "RAFEH";
+
+    color: white;
+
+    font-size: 19px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+.laptop-keyboard {
+    width: 280px;
+    height: 15px;
+
+    margin-left: -10px;
+
+    background: #64748b;
+
+    border-radius: 0 0 15px 15px;
+}
+
+
+.laptop-keyboard::after {
+    content: "";
+
+    display: block;
+
+    width: 65px;
+    height: 4px;
+
+    background: #94a3b8;
+
+    margin: 5px auto;
+
+    border-radius: 10px;
+}
+
+
+/* =========================
+   PRODUCT CONTENT
+========================= */
+
+.laptop-info {
+    padding: 25px;
+}
+
+
+.laptop-info h3 {
+    color: #111827;
+
+    font-size: 21px;
+
+    margin-bottom: 10px;
+}
+
+
+.laptop-description {
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================
+   SPECS
+========================= */
+
+.laptop-specs {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-bottom: 20px;
+}
+
+
+.spec {
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    padding: 5px 9px;
+
+    border-radius: 5px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   PRICE
+========================= */
+
+.product-bottom {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+}
+
+
+.price {
+    color: #111827;
+
+    font-size: 21px;
+
+    font-weight: 800;
+}
+
+
+.view-product {
+    padding: 9px 15px;
+
+    background: #2563eb;
+
+    color: white;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+
+.view-product:hover {
+    background: #1d4ed8;
+}
+
+
+/* =========================
+   INFO SECTION
+========================= */
+
+.laptop-info-section {
+    padding: 75px 20px;
+
+    background: white;
+}
+
+
+.info-content {
+    max-width: 850px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+
+.info-content h2 {
+    color: #111827;
+
+    font-size: 34px;
+
+    margin-bottom: 15px;
+}
+
+
+.info-content p {
+    color: #64748b;
+
+    line-height: 1.8;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.laptop-cta {
+    padding: 70px 20px;
+
+    background: #2563eb;
+
+    color: white;
+
+    text-align: center;
+}
+
+
+.laptop-cta h2 {
+    font-size: 35px;
+
+    margin-bottom: 12px;
+}
+
+
+.laptop-cta p {
+    color: #dbeafe;
+
+    max-width: 600px;
+
+    margin: 0 auto 25px;
+}
+
+
+.laptop-cta a {
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    background: white;
+
+    color: #2563eb;
+
+    border-radius: 8px;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .laptop-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .laptop-page-hero h1 {
+        font-size: 40px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .laptop-page-hero {
+        padding: 60px 20px;
+    }
+
+
+    .laptop-page-hero h1 {
+        font-size: 34px;
+    }
+
+
+    .laptop-page-hero p {
+        font-size: 15px;
+    }
+
+
+    .laptop-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .laptop-section-title h2 {
+        font-size: 29px;
+    }
+
+
+    .laptop-cta h2 {
+        font-size: 29px;
+    }
+
+}
+
+</style>
+
+
+
+<div class="laptops-page">
+
+
+<!-- =========================
+     PAGE HERO
+========================= -->
+
+<section class="laptop-page-hero">
+
+    <h1>
+        Explore Our
+        <span>Laptops</span>
+    </h1>
+
+    <p>
+        Discover powerful and reliable laptops for work,
+        study, gaming and everyday use.
+    </p>
+
+</section>
+
+
+
+<!-- =========================
+     LAPTOP PRODUCTS
+========================= -->
+
+<section class="laptop-products">
+
+    <div class="laptop-container">
+
+
+        <div class="laptop-section-title">
+
+            <h2>
+                Featured Laptops
+            </h2>
+
+            <p>
+                Choose the laptop that fits your needs.
+            </p>
+
+        </div>
+
+
+
+        <div class="laptop-grid">
+
+
+            <!-- =====================
+                 LAPTOP 1
+            ====================== -->
+
+            <div class="laptop-card">
+
+
+                <div class="device-image">
+
+                    <div class="dummy-laptop">
+
+                        <div class="laptop-display"></div>
+
+                        <div class="laptop-keyboard"></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="laptop-info">
+
+                    <h3>
+                        RAFEH ProBook 15
+                    </h3>
+
+
+                    <p class="laptop-description">
+                        A powerful everyday laptop designed
+                        for study, office work and productivity.
+                    </p>
+
+
+                    <div class="laptop-specs">
+
+                        <span class="spec">
+                            Intel Core i5
+                        </span>
+
+                        <span class="spec">
+                            8GB RAM
+                        </span>
+
+                        <span class="spec">
+                            512GB SSD
+                        </span>
+
+                        <span class="spec">
+                            15.6" Display
+                        </span>
+
+                    </div>
+
+
+                    <div class="product-bottom">
+
+                        <div class="price">
+                            Rs. 125,000
+                        </div>
+
+                        <a
+                            href="contact.html"
+                            class="view-product"
+                        >
+                            Details
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================
+                 LAPTOP 2
+            ====================== -->
+
+            <div class="laptop-card">
+
+
+                <div class="device-image">
+
+                    <div class="dummy-laptop">
+
+                        <div class="laptop-display"></div>
+
+                        <div class="laptop-keyboard"></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="laptop-info">
+
+                    <h3>
+                        RAFEH UltraBook 14
+                    </h3>
+
+
+                    <p class="laptop-description">
+                        Lightweight and stylish laptop
+                        perfect for students and professionals.
+                    </p>
+
+
+                    <div class="laptop-specs">
+
+                        <span class="spec">
+                            Intel Core i7
+                        </span>
+
+                        <span class="spec">
+                            16GB RAM
+                        </span>
+
+                        <span class="spec">
+                            512GB SSD
+                         </span>
+
+                        <span class="spec">
+                            14" Display
+                        </span>
+
+                    </div>
+
+
+                    <div class="product-bottom">
+
+                        <div class="price">
+                            Rs. 165,000
+                        </div>
+
+                        <a
+                            href="contact.html"
+                            class="view-product"
+                        >
+                            Details
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================
+                 LAPTOP 3
+            ====================== -->
+
+            <div class="laptop-card">
+
+
+                <div class="device-image">
+
+                    <div class="dummy-laptop">
+
+                        <div class="laptop-display"></div>
+
+                        <div class="laptop-keyboard"></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="laptop-info">
+
+                    <h3>
+                        RAFEH Gaming X
+                    </h3>
+
+
+                    <p class="laptop-description">
+                        High-performance laptop built for
+                        gaming, creative work and demanding tasks.
+                    </p>
+
+
+                    <div class="laptop-specs">
+
+                        <span class="spec">
+                            Core i7
+                        </span>
+
+                        <span class="spec">
+                            16GB RAM
+                        </span>
+
+                        <span class="spec">
+                            1TB SSD
+                        </span>
+
+                        <span class="spec">
+                            RTX Graphics
+                        </span>
+
+                    </div>
+
+
+                    <div class="product-bottom">
+
+                        <div class="price">
+                            Rs. 245,000
+                        </div>
+
+                        <a
+                            href="contact.html"
+                            class="view-product"
+                        >
+                            Details
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================
+                 LAPTOP 4
+            ====================== -->
+
+            <div class="laptop-card">
+
+
+                <div class="device-image">
+
+                    <div class="dummy-laptop">
+
+                        <div class="laptop-display"></div>
+
+                        <div class="laptop-keyboard"></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="laptop-info">
+
+                    <h3>
+                        RAFEH Business 14
+                    </h3>
+
+
+                    <p class="laptop-description">
+                        Reliable business laptop with excellent
+                        performance and professional design.
+                    </p>
+
+
+                    <div class="laptop-specs">
+
+                        <span class="spec">
+                            Core i5
+                        </span>
+
+                        <span class="spec">
+                            16GB RAM
+                        </span>
+
+                        <span class="spec">
+                            512GB SSD
+                        </span>
+
+                        <span class="spec">
+                            Full HD
+                        </span>
+
+                    </div>
+
+
+                    <div class="product-bottom">
+
+                        <div class="price">
+                            Rs. 145,000
+                        </div>
+
+                        <a
+                            href="contact.html"
+                            class="view-product"
+                        >
+                            Details
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================
+                 LAPTOP 5
+            ====================== -->
+
+            <div class="laptop-card">
+
+
+                <div class="device-image">
+
+                    <div class="dummy-laptop">
+
+                        <div class="laptop-display"></div>
+
+                        <div class="laptop-keyboard"></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="laptop-info">
+
+                    <h3>
+                        RAFEH StudentBook
+                    </h3>
+
+
+                    <p class="laptop-description">
+                        Affordable laptop for online classes,
+                        assignments and daily student tasks.
+                    </p>
+
+
+                    <div class="laptop-specs">
+
+                        <span class="spec">
+                            Core i3
+                        </span>
+
+                        <span class="spec">
+                            8GB RAM
+                        </span>
+
+                        <span class="spec">
+                            256GB SSD
+                        </span>
+
+                        <span class="spec">
+                            15.6"
+                        </span>
+
+                    </div>
+
+
+                    <div class="product-bottom">
+
+                        <div class="price">
+                            Rs. 95,000
+                        </div>
+
+                        <a
+                            href="contact.html"
+                            class="view-product"
+                        >
+                            Details
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================
+                 LAPTOP 6
+            ====================== -->
+
+            <div class="laptop-card">
+
+
+                <div class="device-image">
+
+                    <div class="dummy-laptop">
+
+                        <div class="laptop-display"></div>
+
+                        <div class="laptop-keyboard"></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="laptop-info">
+
+                    <h3>
+                        RAFEH Creator Pro
+                    </h3>
+
+
+                    <p class="laptop-description">
+                        Designed for creators, designers and
+                        professionals who need powerful performance.
+                    </p>
+
+
+                    <div class="laptop-specs">
+
+                        <span class="spec">
+                            Core i7
+                        </span>
+
+                        <span class="spec">
+                            32GB RAM
+                        </span>
+
+                        <span class="spec">
+                            1TB SSD
+                        </span>
+
+                        <span class="spec">
+                            Dedicated GPU
+                        </span>
+
+                    </div>
+
+
+                    <div class="product-bottom">
+
+                        <div class="price">
+                            Rs. 285,000
+                        </div>
+
+                        <a
+                            href="contact.html"
+                            class="view-product"
+                        >
+                            Details
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     INFORMATION
+========================= -->
+
+<section class="laptop-info-section">
+
+    <div class="info-content">
+
+        <h2>
+            Find The Right Laptop
+        </h2>
+
+        <p>
+            Whether you need a laptop for education,
+            business, entertainment, gaming or creative work,
+            RAFEH TECH provides a range of devices to match
+            different requirements and budgets.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="laptop-cta">
+
+    <h2>
+        Need Help Choosing A Laptop?
+    </h2>
+
+    <p>
+        Contact us and our team can help you find
+        the right device for your requirements.
+    </p>
+
+    <a href="contact.html">
+        Contact Us
+    </a>
+
+</section>
+
+
+</div>
+
+
+<?php get_footer(); ?>
+
 
